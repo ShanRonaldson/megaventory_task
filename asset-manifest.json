@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/megaventory_task/static/css/main.eb553888.chunk.css",
+    "main.js": "/megaventory_task/static/js/main.4854ff5b.chunk.js",
+    "main.js.map": "/megaventory_task/static/js/main.4854ff5b.chunk.js.map",
+    "runtime-main.js": "/megaventory_task/static/js/runtime-main.a4a89fb8.js",
+    "runtime-main.js.map": "/megaventory_task/static/js/runtime-main.a4a89fb8.js.map",
+    "static/js/2.0920c538.chunk.js": "/megaventory_task/static/js/2.0920c538.chunk.js",
+    "static/js/2.0920c538.chunk.js.map": "/megaventory_task/static/js/2.0920c538.chunk.js.map",
+    "static/js/3.41e28bb6.chunk.js": "/megaventory_task/static/js/3.41e28bb6.chunk.js",
+    "static/js/3.41e28bb6.chunk.js.map": "/megaventory_task/static/js/3.41e28bb6.chunk.js.map",
+    "index.html": "/megaventory_task/index.html",
+    "static/css/main.eb553888.chunk.css.map": "/megaventory_task/static/css/main.eb553888.chunk.css.map",
+    "static/js/2.0920c538.chunk.js.LICENSE.txt": "/megaventory_task/static/js/2.0920c538.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a4a89fb8.js",
+    "static/js/2.0920c538.chunk.js",
+    "static/css/main.eb553888.chunk.css",
+    "static/js/main.4854ff5b.chunk.js"
+  ]
+}
