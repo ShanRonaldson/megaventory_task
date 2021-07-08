@@ -66,3 +66,6 @@ https://www.npmjs.com/package/react-modal
 
 click on overlay of modal to close (guide):
 https://codepen.io/claydiffrient/pen/woLzwo?editors=0010
+
+html table elements: 
+https://www.w3schools.com/html/html_tables.asp (to check I had all the table elements)
