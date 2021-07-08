@@ -28,7 +28,18 @@ export function Window() {
             </section>
             <section className="window-items">
               <h4 className="window-items__header">Details</h4>
-              <Table />
+
+              {data.PurchaseOrderDetails.map((detail, index) => {
+                return (
+                  <Table
+                    key={index}
+                    sku={detail.PurchaseOrderRowProductSKU}
+                    quantity={detail.PurchaseOrderRowQuantity}
+                    price={detail.PurchaseOrderRowUnitPriceWithoutTaxOrDiscount}
+                    total={detail.PurchaseOrderRowTotalAmount}
+                  />
+                );
+              })}
             </section>
           </div>
         );

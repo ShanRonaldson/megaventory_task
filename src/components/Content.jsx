@@ -1,8 +1,8 @@
 import React from "react";
 
 import { Switch, Route, useLocation, NavLink } from "react-router-dom";
-import { Orders } from "../components/Orders";
-import { TaskInfo } from "../components/TaskInfo";
+import { Task } from "../pages/Task";
+import { TaskInfo } from "../pages/TaskInfo";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 export function Content() {
@@ -42,7 +42,7 @@ export function Content() {
               key={location.key}
             >
               <Switch location={location}>
-                <Route path="/orders" children={<Orders />} />
+                <Route path="/orders" children={<Task />} />
                 <Route path="/taskInfo" children={<TaskInfo />} />
               </Switch>
             </CSSTransition>

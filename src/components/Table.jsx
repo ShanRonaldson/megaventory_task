@@ -1,10 +1,6 @@
-import orders from "../data/purchaseorders.json";
-
-export function Table() {
+export function Table(props) {
   return (
-    <div>
-      {orders.mvPurchaseOrders.map((data, key) => {
-        return (
+
           <table className="window-table">
             <tr className="table-row">
               <th className="table-header">Product SKU</th>
@@ -14,21 +10,19 @@ export function Table() {
             </tr>
             <tr className="table-row">
               <td className="table-entry">
-                {data.PurchaseOrderDetails.PurchaseOrderRowProductSKU}
+                {props.sku}
               </td>
               <td className="table-entry">
-                {data.PurchaseOrderDetails.PurchaseOrderRowQuantity}
+                {props.quantity}
               </td>
               <td className="table-entry">
-                {data.PurchaseOrderRowUnitPriceWithoutTaxOrDiscount}
+                {props.price}
               </td>
               <td className="table-entry">
-                {data.PurchaseOrderDetails.PurchaseOrderRowTotalAmount}
+               {props.total}
               </td>
             </tr>
           </table>
-        );
-      })}
-    </div>
+
   );
 }

@@ -3,59 +3,41 @@ import React from "react";
 import Modal from "react-modal";
 
 import orders from "../data/purchaseorders.json";
-import Window from "../components/Window";
+import { Window } from "../components/Window";
 
 Modal.setAppElement(document.getElementById("root"));
 
-export class Orders extends React.Component {
-  constructor() {
-    super();
+export function Orders() {
+  const [modalIsOpen, setIsOpen] = React.useState(false);
 
-    this.state = {
-      showModal: false,
-    };
-
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
+  function openModal() {
+    setIsOpen(true);
   }
 
-  handleOpenModal() {
-    this.setState({ showModal: true });
+  function closeModal() {
+    setIsOpen(false);
   }
 
-  handleCloseModal() {
-    this.setState({ showModal: false });
-  }
+  return (
+    <div>
+      {orders.mvPurchaseOrders.map((data, key) => {
+        return (
+          <p key={key} className="orders-list__item" onClick={openModal}>
+            {data.PurchaseOrderTypeAbbreviation} - {data.PurchaseOrderNo}
+          </p>
+        );
+      })}
 
-  render() {
-    return (
-      <div>
-        <ul className="orders-list">
-          {orders.mvPurchaseOrders.map((data, key) => {
-            return (
-              <li
-                key={key}
-                className="orders-list__item"
-                onClick={this.handleOpenModal}
-              >
-                {data.PurchaseOrderTypeAbbreviation} - {data.PurchaseOrderNo}
-              </li>
-            );
-          })}
-        </ul>
-        <Modal
-          isOpen={this.handleOpenModal}
-          contentLabel="Purchase Order Information"
-          onRequestClose={this.handleCloseModal}
-          shouldCloseOnOverlayClick={true}
-        >
-          <Window />
-
-          <button onClick={this.handleCloseModal} className="window--close">
-            Close
-          </button>
-        </Modal>
-      </div>
-    );
-  }
+      <Modal
+        isOpen={modalIsOpen}
+        contentLabel="Purchase Order Information"
+        onRequestClose={closeModal}
+      >
+        <Window />
+        <button className="window--close" onClick={closeModal}>
+          Close
+        </button>
+      </Modal>
+    </div>
+  );
 }
