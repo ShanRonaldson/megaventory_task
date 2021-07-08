@@ -69,3 +69,9 @@ https://codepen.io/claydiffrient/pen/woLzwo?editors=0010
 
 html table elements: 
 https://www.w3schools.com/html/html_tables.asp (to check I had all the table elements)
+
+getting only the clicked on order element (filtering):
+https://upmostly.com/tutorials/react-filter-filtering-arrays-in-react-with-examples
+
+styled components (guide):
+https://styled-components.com/docs/basics#coming-from-css (used to remind me I was doing it correctly)

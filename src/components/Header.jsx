@@ -1,11 +1,19 @@
+import styled from "styled-components";
+
+const StyledHeader = styled.header`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(#CDF0EA, #F9F9F9);
+`;
+
 function Header() {
   return (
-    <header className="header">
+    <StyledHeader className="header">
       <h1 className="header__title">Megaventory Internship Task</h1>
       <h2 className="header__secondary">July 2021</h2>
       <h3 className="header__tertiary">By Shannon Schrauwen</h3>
-
-    </header>
+    </StyledHeader>
   );
 }
 

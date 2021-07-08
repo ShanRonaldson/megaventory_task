@@ -1,14 +1,37 @@
 import React from "react";
-
+import styled from "styled-components";
 import Modal from "react-modal";
 
 import orders from "../data/purchaseorders.json";
-import { Window } from "../components/Window";
+import { PopOut } from "./PopOut";
 
 Modal.setAppElement(document.getElementById("root"));
 
+const StyledPara = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 1rem;
+  height: 55vh;
+  font-size: 1.5rem;
+`;
+
+const StyledButton = styled.button`
+  margin-top: 5rem;
+  margin-left: 10rem;
+`;
+
+const modalStyles = {
+  content: {
+    backgroundColor: "#F9F9F9",
+  },
+};
+
 export function Orders() {
   const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  const [selectedItem, setSelectedItem] = React.useState(1);
 
   function openModal() {
     setIsOpen(true);
@@ -19,10 +42,18 @@ export function Orders() {
   }
 
   return (
-    <div>
+    <StyledPara>
       {orders.mvPurchaseOrders.map((data, key) => {
         return (
-          <p key={key} className="orders-list__item" onClick={openModal}>
+          <p
+            key={key}
+            className="orders-list__item"
+            onClick={() => {
+              openModal();
+              setSelectedItem(data.PurchaseOrderId);
+              console.log(selectedItem);
+            }}
+          >
             {data.PurchaseOrderTypeAbbreviation} - {data.PurchaseOrderNo}
           </p>
         );
@@ -32,12 +63,13 @@ export function Orders() {
         isOpen={modalIsOpen}
         contentLabel="Purchase Order Information"
         onRequestClose={closeModal}
+        style={modalStyles}
       >
-        <Window />
-        <button className="window--close" onClick={closeModal}>
+        <PopOut selectedItem={selectedItem} />
+        <StyledButton className="window--close" onClick={closeModal}>
           Close
-        </button>
+        </StyledButton>
       </Modal>
-    </div>
+    </StyledPara>
   );
 }

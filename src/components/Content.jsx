@@ -1,9 +1,18 @@
 import React from "react";
+import styled from "styled-components";
 
 import { Switch, Route, useLocation, NavLink } from "react-router-dom";
 import { Task } from "../pages/Task";
 import { TaskInfo } from "../pages/TaskInfo";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+
+// Styles
+
+const StyledNav = styled.ul`
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+`;
 
 export function Content() {
   let location = useLocation();
@@ -11,14 +20,14 @@ export function Content() {
   return (
     <div className="nav">
       <div className="nav--Router">
-        <ul className="nav--list">
+        <StyledNav className="nav--list">
           <NavLink
             exact
             activeClassName="active"
-            to="/orders"
+            to="/home"
             className="nav--list-item"
           >
-            Orders
+            Task
           </NavLink>
 
           <NavLink
@@ -28,7 +37,7 @@ export function Content() {
           >
             Task Information
           </NavLink>
-        </ul>
+        </StyledNav>
 
         <hr />
 
@@ -42,7 +51,7 @@ export function Content() {
               key={location.key}
             >
               <Switch location={location}>
-                <Route path="/orders" children={<Task />} />
+                <Route path="/home" children={<Task />} />
                 <Route path="/taskInfo" children={<TaskInfo />} />
               </Switch>
             </CSSTransition>
