@@ -27,7 +27,7 @@ function Footer() {
         </a>
         <a href="https://shanschrauwen.com/" className="footer__link">
           <img
-            src="./images/shannon_schrauwen_website"
+            src="./images/shannon_schrauwen_website.png"
             alt="Shannon Schrauwen portfolio site logo"
             className="footer--img"
           />
